@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rivals Gold Edition - SuperSpinnery</title>
+    <style>
+        :root {
+            --gold: linear-gradient(45deg, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+            --dark: #0a0f1a;
+            --card-bg: #161e2e;
+            --white: #f8fafc;
+        }
+
+        body { 
+            font-family: 'Segoe UI', sans-serif; 
+            margin: 0; 
+            background-color: var(--dark); 
+            color: var(--white); 
+        }
+
+        header { 
+            text-align: center; 
+            padding: 60px 20px; 
+            background: linear-gradient(rgba(10, 15, 26, 0.8), rgba(10, 15, 26, 0.9));
+            border-bottom: 2px solid #bf953f;
+        }
+
+        header h1 { 
+            font-size: 3rem; 
+            margin: 0; 
+            text-transform: uppercase; 
+            background: var(--gold);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .container { 
+            max-width: 1000px; 
+            margin: auto; 
+            padding: 40px 20px; 
+        }
+
+        .products { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 30px; 
+        }
+
+        .card { 
+            background: var(--card-bg); 
+            border-radius: 20px; 
+            padding: 25px; 
+            text-align: center; 
+            border: 1px solid #bf953f;
+            position: relative;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .card:hover { transform: translateY(-5px); }
+
+        .img-box { 
+            width: 100%; 
+            height: 250px; 
+            border-radius: 15px; 
+            margin-bottom: 20px; 
+            overflow: hidden;
+            background: #232d3f;
+        }
+
+        .img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Obrazek dopasuje się do ramki */
+        }
+
+        .price { font-size: 2rem; font-weight: bold; margin: 15px 0; color: #fcf6ba; }
+
+        .btn { 
+            display: block; 
+            padding: 15px; 
+            border-radius: 12px; 
+            text-decoration: none; 
+            font-weight: bold; 
+            background: var(--gold);
+            color: #4a3707;
+            text-transform: uppercase;
+        }
+
+        .bundle-card {
+            grid-column: 1 / -1; /* Rozciąga na całą szerokość */
+            margin-top: 30px;
+            background: linear-gradient(rgba(22, 30, 46, 0.9), rgba(22, 30, 46, 0.9)), var(--gold);
+            border: 2px solid #fcf6ba;
+        }
+
+        .shine::after {
+            content: "";
+            position: absolute;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.2), transparent);
+            transform: rotate(45deg);
+            animation: moveShine 5s infinite;
+        }
+
+        @keyframes moveShine {
+            0% { margin-left: -150%; }
+            100% { margin-left: 150%; }
+        }
+
+        footer { text-align: center; padding: 40px; opacity: 0.5; font-size: 0.8rem; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Rivals Gold Collection</h1>
+    <p>Limitowana złota edycja - Twoje ulubione skiny w zasięgu ręki</p>
+</header>
+
+<div class="container">
+    <div class="products">
+        
+        <!-- Produkt 1: Keyrambit Złoty -->
+        <div class="card shine">
+            <div class="img-box">
+                <img src="Zdjęcie.png" alt="Złoty Keyrambit">
+            </div>
+            <h2>Keyrambit Gold</h2>
+            <p>Ekskluzywny skin do walki w zwarciu.</p>
+            <div class="price">29.00 PLN</div>
+            <a href="#" class="btn">KUP TERAZ</a>
+        </div>
+
+        <!-- Produkt 2: Keylisong Złoty -->
+        <div class="card shine">
+            <div class="img-box">
+                <img src="Zdjęcie2.png" alt="Złoty Keylisong">
+            </div>
+            <h2>Keylisong Gold</h2>
+            <p>Złoty balisong do mistrzowskiego flippingu.</p>
+            <div class="price">29.00 PLN</div>
+            <a href="#" class="btn">KUP TERAZ</a>
+        </div>
+
+        <!-- Opcja Zestawu -->
+        <div class="card bundle-card shine">
+            <h2>PAKIET GOLD: Keyrambit + Keylisong</h2>
+            <p>Zgarnij oba złote skiny i oszczędź!</p>
+            <div class="price" style="text-decoration: line-through; font-size: 1.2rem; opacity: 0.6;">58.00 PLN</div>
+            <div class="price" style="margin-top: 0;">49.00 PLN</div>
+            <a href="#" class="btn" style="background: #fcf6ba;">KUP ZESTAW I OSZCZĘDŹ</a>
+        </div>
+
+    </div>
+</div>
+
+<footer>
+    &copy; 2026 SuperSpinnery. Wszystkie pliki znajdują się w jednym folderze.
+</footer>
+
+</body>
+</html>
